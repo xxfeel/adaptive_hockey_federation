@@ -37,7 +37,9 @@ services:
       - URL=${HOST}
       - VALIDATION=http
     volumes:
-      - /path/to/swag/config:/config
+      - ../nginx/nginx_stage.conf:/etc/nginx/templates/default.conf.template
+      - static_value:/var/html/static/
+      - media_value:/var/html/media/
     ports:
       - 443:443
       - 80:${PORT}
