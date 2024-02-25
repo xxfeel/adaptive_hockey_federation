@@ -36,6 +36,7 @@ services:
       - TZ=Europe/Moscow
       - URL=${HOST}
       - VALIDATION=http
+      - STAGING=${ST}
     volumes:
       - ../nginx/nginx_stage.conf:/etc/nginx/templates/default.conf.template
       - static_value:/var/html/static/
