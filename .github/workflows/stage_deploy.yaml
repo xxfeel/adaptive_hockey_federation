@@ -103,7 +103,7 @@ jobs:
             # Installing defend service for app
             sudo cp -f /home/developer/adaptive_hockey_federation/infra/stage/adaptive_hockey_federation.service /etc/systemd/system/adaptive_hockey_federation.service
             sudo systemctl daemon-reload
-            sudo systemctl restart adaptive_hockey_federation.service
+            sudo systemctl start adaptive_hockey_federation.service
 
             sleep 20
             docker exec adaptive_hockey_federation python manage.py collectstatic --noinput
