@@ -81,8 +81,11 @@ jobs:
             echo HOST=${{ secrets.HOST }} >> .env
             echo PORT=${{ secrets.PORT }} >> .env
             echo IMAGE_COMPOSE=${{ secrets.IMAGE_COMPOSE }} >> .env
+            echo ST=${{ secrets.ST }} >> .env
 
             echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
+            echo CSRF_TRUSTED_ORIGINS=${{ secrets.CSRF_TRUSTED_ORIGINS }} >> .env
+            echo CSRF_TRUSTED_ORIGINS=${{ secrets.CSRF_TRUSTED_ORIGINS }} >> .env
             echo DEBUG=${{ secrets.DEBUG }} >> .env
             echo ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }} >> .env
 
