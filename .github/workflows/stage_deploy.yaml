@@ -94,6 +94,7 @@ jobs:
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
 
             cd infra/stage/
+            sudo systemctl stop adaptive_hockey_federation.service
             docker system prune --force
 
             # Installing defend service for app
@@ -103,4 +104,5 @@ jobs:
 
             sleep 20
             docker exec adaptive_hockey_federation python manage.py collectstatic --noinput
+            docker exec adaptive_hockey_federation python manage.py makemigrations
             docker exec adaptive_hockey_federation python manage.py migrate
