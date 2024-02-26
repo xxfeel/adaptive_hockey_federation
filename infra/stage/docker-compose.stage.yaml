@@ -25,7 +25,7 @@ services:
     depends_on:
       - db
 
-  nginx:
+  swag:
     image: lscr.io/linuxserver/swag:latest
     container_name: swag
     cap_add:
@@ -39,6 +39,7 @@ services:
       - STAGING=${ST}
     volumes:
       - ../nginx/nginx_stage.conf:/config/nginx/site-confs/default.conf
+      - swag_volume_stage:/config
       - static_value:/var/html/static/
       - media_value:/var/html/media/
     ports:
@@ -54,3 +55,4 @@ volumes:
   static_value:
   media_value:
   postgres_data:
+  swag_volume_stage:
