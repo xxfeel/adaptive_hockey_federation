@@ -22,6 +22,7 @@ jobs:
 
       - name: Установка зависимостей
         run: |
+          poetry lock --no-update
           poetry install
 
       - name: isort
@@ -47,6 +48,7 @@ jobs:
 
       - name: Установка зависимостей
         run: |
+          poetry lock --no-update
           poetry install
 
       - name: flake8
@@ -72,6 +74,7 @@ jobs:
 
       - name: Установка зависимостей
         run: |
+          poetry lock --no-update
           poetry install
       - name: mypy
         run: |
